@@ -311,14 +311,14 @@ mod runtime {
 
 	// add this line for node_authorization
 	#[runtime::pallet_index(8)]
-	pub type NodeAuthorization = pallet_node_authorization::NodeAuthorization<Pallet, Call, Storage, Event<T>, Config<T>>;
-	// pub type NodeAuthorization = (
-	// 	pallet_node_authorization::Pallet,
-	// 	pallet_node_authorization::Call,
-	// 	pallet_node_authorization::Storage,
-	// 	pallet_node_authorization::Event<T>,
-	// 	pallet_node_authorization::Config<T>
-	// );
+	// pub type NodeAuthorization = pallet_node_authorization::NodeAuthorization<Pallet, Call, Storage, Event<T>, Config<T>>;
+	pub type NodeAuthorization = (
+		pallet_node_authorization::Pallet,
+		pallet_node_authorization::Call,
+		pallet_node_authorization::Storage,
+		pallet_node_authorization::Event<T>,
+		pallet_node_authorization::Config<T>
+	);
 
 }
 
