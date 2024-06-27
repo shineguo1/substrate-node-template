@@ -251,7 +251,7 @@ parameter_types! {
 	pub const MaxPeerIdLength: u32 = 128;
 }
 
-impl pallet_node_authorization::Config for Runtime {
+// impl pallet_node_authorization::Config for Runtime {
 	// type RuntimeEvent = RuntimeEvent;
 	// type MaxWellKnownNodes = MaxWellKnownNodes;
 	// type MaxPeerIdLength = MaxPeerIdLength;
@@ -260,7 +260,7 @@ impl pallet_node_authorization::Config for Runtime {
 	// type SwapOrigin = EnsureRoot<AccountId>;
 	// type ResetOrigin = EnsureRoot<AccountId>;
 	// type WeightInfo = ();
-}
+// }
 
 /// Configure the pallet-template in pallets/template.
 impl pallet_template::Config for Runtime {
