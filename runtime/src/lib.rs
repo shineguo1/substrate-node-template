@@ -191,17 +191,6 @@ impl pallet_node_authorization::Config for Runtime {
 	type WeightInfo = ();
 }
 
-construct_runtime!(
-	pub enum Runtime where
-	   Block = Block,
-	   NodeBlock = opaque::Block,
-	   UncheckedExtrinsic = UncheckedExtrinsic
-	 {
-	   /*** Add This Line ***/
-	   NodeAuthorization: pallet_node_authorization::{Pallet, Call, Storage, Event<T>, Config<T>},
-	 }
-);
-
 impl pallet_aura::Config for Runtime {
 	type AuthorityId = AuraId;
 	type DisabledValidators = ();
@@ -319,6 +308,11 @@ mod runtime {
 	// Include the custom logic from the pallet-template in the runtime.
 	#[runtime::pallet_index(7)]
 	pub type TemplateModule = pallet_template;
+
+	// add this line for node_authorization
+	#[runtime::pallet_index(8)]
+	pub type NodeAuthorization = pallet_node_authorization::{Pallet, Call, Storage, Event<T>, Config<T>};
+
 }
 
 /// The address format for describing accounts.
