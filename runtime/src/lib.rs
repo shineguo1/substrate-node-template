@@ -309,6 +309,17 @@ mod runtime {
 	// Include the custom logic from the pallet-template in the runtime.
 	#[runtime::pallet_index(7)]
 	pub type TemplateModule = pallet_template;
+
+	// add this line for node_authorization
+	#[runtime::pallet_index(8)]
+	pub type NodeAuthorization = (
+		pallet_node_authorization::Pallet,
+		pallet_node_authorization::Call,
+		pallet_node_authorization::Storage,
+		pallet_node_authorization::Event<T>,
+		pallet_node_authorization::Config<T>
+	);
+
 }
 
 /// The address format for describing accounts.
